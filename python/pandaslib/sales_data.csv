@@ -1,0 +1,10 @@
+| ID | Name    | Age | Department | Salary |
+| -- | ------- | --- | ---------- | ------ |
+| 1  | Alice   | 28  | HR         | 50000  |
+| 2  | Bob     | 34  | IT         | 65000  |
+| 3  | Charlie | 29  | Finance    | 72000  |
+| 4  | David   | 40  | Marketing  | 58000  |
+| 5  | Emma    | 31  | IT         | 67000  |
+| 6  | Frank   | 25  | HR         | 45000  |
+| 7  | Grace   | 38  | Finance    | 80000  |
+| 8  | Henry   | 30  | Marketing  | 60000  |
