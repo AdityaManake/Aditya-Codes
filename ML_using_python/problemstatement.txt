@@ -1,0 +1,2 @@
+1.wap based on elementry row and column transformation using python loops
+2.rank of matrix
