@@ -1,72 +1,118 @@
 #include<stdio.h>
-#include<stdlib.h>
-#define size 5
-void push();
-void pop();
-void display();
-int stack[size];
+#define MAX 100
+int stack[MAX];
 int top=-1;
+void push(int n);
+void pop();
+void peek();
+void display();
+void isEmpty();
+void isFull();
 int main()
 {
-    int ch;
-    printf("1.PUSH\n2.POP\n3.Display\n4.Exit\n");
-    do
+    int choice,value;
+    printf("Enter '1' to push:\n");
+    printf("Enter '2' to pop:\n");
+    printf("Enter '3' to peek:\n");
+    printf("Enter '4' to display:\n");
+    printf("Enter '5' to check if stack is empty:\n");
+    printf("Enter '6' to check if stack is full:\n");
+    printf("Enter '7' to exit:\n");
+    while(1)
     {
-      printf("Enter your choice:");
-      scanf("%d",&ch);
-      switch(ch)
-      {
-        case 1: push();
-        break;
-        case 2: pop();
-        break;
-        case 3: display();
-        break;
-        case 4: exit(0);
-        break;
-      }
-    } while (ch!=0);
-    return 0;
+        printf("Enter your choice:");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1: printf("Enter element to push:");
+                    scanf("%d",&value);
+                    push(value);
+                    break;
+            case 2: pop();
+                    break;
+            case 3: peek();
+                    break;
+            case 4: display();
+                    break;
+            case 5: isEmpty();
+                    break;
+            case 6: isFull();
+                    break;
+            case 7: printf("Exiting!\n");
+                    return 0;
+            default: printf("Enter a valid input!\n");
+        }
+    }
 }
-void push()
+void push(int n)
 {
-    int element;
-    if(top==size-1)
+    if(top== MAX-1)
     {
-        printf("\n Stack is full!...");
+        printf("Stack overflow!\n");
     }
     else
     {
-        printf("\nEnter element to insert:");
-        scanf("%d",&element);
-        top++;
-        stack[top]=element;
+        stack[++top]=n;
+        printf("%d added to stack\n",n);
     }
 }
 void pop()
 {
     if(top==-1)
     {
-        printf("\nStack is empty!...");
+        printf("Stack underflow!\n");
     }
     else
     {
-        printf("\n Deleted element is=%d\n",stack[top]);
-        top--;
+        printf("%d element popped out!\n",stack[top--]);
+    }
+}
+void peek()
+{
+    if(top==-1)
+    {
+        printf("Stack empty!\n");
+    }
+    else
+    {
+        printf("Top element %d\n",stack[top]);
     }
 }
 void display()
 {
     if(top==-1)
     {
-        printf("\nStack is empty!...");
+        printf("Stack empty!\n");
     }
     else
     {
-        printf("\nStack elements are:\n");
-        for(int i=0;i<top;i++)
+        printf("Stack elements:");
+        for(int i=0;i<=top;i++)
         {
-            printf("\t %d\n",stack[i]);
+            printf("%d ",stack[i]);
         }
+        printf("\n");
     }
+}
+void isEmpty()
+{
+    if(top==-1)
+    { 
+        printf("Stack is empty!\n");
+    }
+    else{
+        printf("Stack is not empty!\n");
+    }
+}
+void isFull()
+{
+    if(top == MAX-1)
+    {
+        printf("Stack is Full!\n");
+    }
+    else
+    {
+        printf("Stack is not full!\n");
+    }
+    
 }
