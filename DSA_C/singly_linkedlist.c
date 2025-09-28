@@ -9,68 +9,85 @@ void insert_pos();
 void delete_all();
 void delete_pos();
 int count_elems();
-void reverse_ll();
 void search();
-
-struct node {
+void reverse_ll();
+struct node{
     int info;
     struct node *next;
 };
-struct node *start = NULL;
-
-int main() {
+struct node *start=NULL;
+int main()
+{
     int choice;
-    while(1) {
-        printf("\n1. create\n");
-        printf("2. display\n");
-        printf("3. insert at begin\n");
-        printf("4. insert at end\n");
-        printf("5. insert at any position\n");
-        printf("6. delete at given position\n");
-        printf("7. delete all\n");
-        printf("8. count elements\n");
-        printf("9. reverse linked list\n");
-        printf("10. search for an element\n");
-        printf("11. exit\n");
-
-        printf("Enter your choice: ");
-        scanf("%d",&choice);
-
-        switch(choice) {
-            case 1: create(); break;
-            case 2: display(); break;
-            case 3: insert_begin(); break;
-            case 4: insert_end(); break;
-            case 5: insert_pos(); break;
-            case 6: delete_pos(); break;
-            case 7: delete_all(); break;
-            case 8: count_elems(); break;
-            case 9: reverse_ll(); break;
-            case 10: search(); break;
-            case 11: exit(0);
-            default: printf("Incorrect choice.\n");
-        }
+    printf("Enter '1' to create:\n");
+    printf("Enter '2' to Display:\n");
+    printf("Enter '3' to Insert at the beginning:\n");
+    printf("Enter '4' to Insert at the end:\n");
+    printf("Enter '5' to Insert at a position:\n");
+    printf("Enter '6' to Delete all elements:\n");
+    printf("Enter '7' to Delete at a position:\n");
+    printf("Enter '8' to Count the number of elements:\n");
+    printf("Enter '9' to search for an element:\n");
+    printf("Enter '10' to reverse the linked-list:\n");
+    printf("Enter '11' to exit:\n");
+    while(1){
+    printf("Enter your choice:");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+        case 1: create();
+                break;
+        case 2: display();
+                break;
+        case 3: insert_begin();
+                break;
+        case 4: insert_end();
+                break;
+        case 5: insert_pos();
+                break;
+        case 6: delete_all();
+                break;
+        case 7: delete_pos();
+                break;
+        case 8: count_elems();
+                break;
+        case 9: search();
+                break;
+        case 10: reverse_ll();
+                break;
+        case 11: exit(0);
+        default: printf("\nInvalid input!");
     }
+ }
     return 0;
 }
-
-void create() {
-    struct node *temp, *ptr;
-    temp = (struct node*) malloc(sizeof(struct node));
-    printf("Enter data: ");
-    scanf("%d", &temp->info);
-    temp->next = NULL;
-    if(start == NULL) {
-        start = temp;
-    } else {
-        ptr = start;
-        while(ptr->next != NULL) {
-            ptr = ptr->next;
+void create()
+{
+    struct node *temp,*ptr;
+    int len;
+    printf("Enter no. of elements :");
+    scanf("%d",&len);
+    for(int i = 0; i < len; i++)
+    {
+        temp=(struct node*) malloc(sizeof(struct node));
+        printf("Enter data:");
+        scanf("%d",&temp->info);
+        temp->next=NULL;
+        if(start==NULL)
+        {
+            start = temp;
         }
-        ptr->next = temp;
+        else
+        {
+            while(ptr->next !=NULL)
+            {
+                ptr=ptr->next;
+            }
+            ptr->next=temp;
+        }
+        ptr=temp;
     }
 }
-
 void display() {
     struct node *ptr;
     if(start == NULL) {
@@ -85,144 +102,166 @@ void display() {
     }
     printf("\n");
 }
-
-void insert_begin() {
+void insert_begin()
+{
     struct node *temp;
-    temp = (struct node*) malloc(sizeof(struct node));
-    printf("Enter data: ");
-    scanf("%d", &temp->info);
-    temp->next = start;
-    start = temp;
+    temp=(struct node*) malloc(sizeof(struct node));
+    printf("Enter data:");
+    scanf("%d",&temp->info);
+    temp->next=start;
+    start=temp;
 }
-
-void insert_end() {
-    struct node *temp, *ptr;
-    temp = (struct node*) malloc(sizeof(struct node));
-    printf("Enter data: ");
-    scanf("%d", &temp->info);
-    temp->next = NULL;
-    if(start == NULL) {
-        start = temp;
-    } else {
-        ptr = start;
-        while(ptr->next != NULL) {
-            ptr = ptr->next;
-        }
-        ptr->next = temp;
-    }
-}
-
-void insert_pos() {
+void insert_end()
+{
     struct node *temp,*ptr;
-    int i,pos;
-    temp=(struct node*)malloc(sizeof(struct node));
-    printf("Enter data: ");
+    temp=(struct node*) malloc (sizeof(struct node));
+    printf("Enter data:");
     scanf("%d",&temp->info);
     temp->next=NULL;
-    printf("\nEnter position: ");
+    if(start==NULL)
+    {
+        start=temp;
+    }
+    else
+    {
+        ptr=start;
+        while(ptr->next!= NULL)
+        {
+            ptr=ptr->next;
+        }
+        ptr->next=temp;
+    }
+}
+void insert_pos()
+{
+    int pos;
+    struct node *temp,*ptr;
+    temp=(struct node*) malloc(sizeof(struct node));
+    printf("Enter data:");
+    scanf("%d",&temp->info);
+    temp->next=NULL;
+    printf("Enter position:");
     scanf("%d",&pos);
-
-    if(pos==1) {
+    if(pos==1)
+    {
         temp->next=start;
         start=temp;
         return;
     }
-
     ptr=start;
-    for(i=1;i<pos-1 && ptr!=NULL;i++) {
-        ptr=ptr->next;
-    }
-    if(ptr==NULL) {
-        printf("Position not found\n");
-        free(temp);
-    } else {
-        temp->next=ptr->next;
-        ptr->next=temp;
+    for(int i=1;i<pos-1 && ptr!=NULL;i++)
+    {
+        if(ptr==NULL)
+        {
+            printf("Position not found!");
+        }
+        else
+        {
+            temp->next=ptr->next;
+            ptr->next=temp;
+        }
     }
 }
-
-void delete_all() {
+void delete_all()
+{
     struct node *temp;
-    while(start!=NULL) {
+    while(start!=NULL)
+    {
         temp=start;
         start=start->next;
         free(temp);
     }
     printf("All values deleted!\n");
 }
-
-void delete_pos() {
-    int i,pos;
+void delete_pos()
+{
     struct node *temp,*ptr;
-    if(start==NULL) {
-        printf("Empty list\n");
-        return;
+    int pos;
+    if(start==NULL)
+    {
+        printf("Empty list!\n");
     }
-    printf("Enter position: ");
+    printf("Enter position:");
     scanf("%d",&pos);
-    if(pos==1) {
+    if(pos==1)
+    {
         temp=start;
         start=start->next;
         free(temp);
         return;
     }
     ptr=start;
-    for(i=1;i<pos-1 && ptr!=NULL;i++) {
+    for(int i=1;i<-pos && ptr!=NULL; i++)
+    {
         ptr=ptr->next;
     }
-    if(ptr==NULL || ptr->next==NULL) {
-        printf("Position not found\n");
-    } else {
+    if(ptr==NULL || ptr->next==NULL)
+    {
+        printf("Position not found!\n");
+    }
+    else
+    {
         temp=ptr->next;
         ptr->next=temp->next;
+        printf("Node deleted!\n");
         free(temp);
-        printf("Node deleted\n");
     }
 }
-
-int count_elems() {
+int count_elems()
+{
+    struct node *ptr;
     int count=0;
-    struct node *ptr=start;
-    while(ptr!=NULL) {
-        count++;
+    ptr=start;
+    while(ptr!=NULL)
+    {
         ptr=ptr->next;
+        count++;
     }
-    printf("Number of elements: %d\n",count);
+    printf("Total numbers of elements in the list:%d\n",count);
     return count;
 }
-
-void reverse_ll() {
-    int len=count_elems();
-    if(len==0) return;
-    int arr[len];
-    struct node *ptr=start;
-    for(int i=0;i<len;i++) {
-        arr[i]=ptr->info;
-        ptr=ptr->next;
-    }
-    printf("Reversed linked list: ");
-    for(int i=len-1;i>=0;i--) {
-        printf("%d ",arr[i]);
-    }
-    printf("\n");
-}
-
-void search() {
+void search()
+{
     struct node *ptr;
-    int key,pos=1,found=0;
-    printf("Enter element to search: ");
+    int key,found,pos=1;
+    printf("Enter the element to search:");
     scanf("%d",&key);
     ptr=start;
-    while(ptr!=NULL) {
-        if(ptr->info==key) {
-            printf("Element found at position %d\n",pos);
+    while(ptr!=NULL)
+    {
+        if(ptr->info==key)
+        {
+            printf("Element %d found at index %d\n",ptr->info,pos);
             found=1;
             break;
         }
         ptr=ptr->next;
         pos++;
     }
-    if(!found) {
-        printf("Element not found\n");
+    if(found==0)
+    {
+        printf("Element %d not in the list!\n",key);
     }
+}
+void reverse_ll()
+{
+    struct node *ptr;
+    ptr=start;
+    int len=count_elems();
+    int arr[len];
+    if(len==0)
+    {
+        return;
+    }
+    for(int i=0;i<len;i++)
+    {
+        arr[i]=ptr->info;
+        ptr=ptr->next;
+    }
+    printf("Revesed linked list:\n");
+    for(int i=len-1;i>=0;i--)
+    {
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
 }
