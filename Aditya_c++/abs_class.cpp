@@ -1,3 +1,4 @@
+// Abstract class is a class that contains atleast one pure virtual function
 #include<iostream>
 using namespace std;
 class Base
