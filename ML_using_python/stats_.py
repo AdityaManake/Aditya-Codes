@@ -12,7 +12,7 @@ print("Mode:",mode)
 print("Percentile:",percentile)
 
 #without using inbuild option
-data2 = [5, 6, 8, 9, 32, 76, 21]
+data2 = [5, 6, 8, 9, 5, 32, 76, 21, 5]
 
 mean2 = sum(data2) / len(data2)
 print("Mean:", mean2)
@@ -49,13 +49,19 @@ print("Median:", find_median())
 
 def find_mode():
     frequency = {}
-    for i in data2:
-        frequency[i] = frequency.get(i, 0) + 1
-    max_frequency = max(frequency.values())
-    modes = [key for key, value in frequency.items() if value == max_frequency]
-    return modes
+    for item in data2:
+        if item in frequency:
+            frequency[item]+=1
+        else: 
+            frequency[item]=1
+    max_freq=0
+    for key in frequency:
+        if frequency[key]>max_freq:
+            max_freq=frequency[key]
+            mode=key
+    print("Mode:",mode,"frequency is:", max_freq)
 
-print("Mode:", find_mode())
+find_mode()
 
 
 def find_percentile(p=75):
