@@ -1,35 +1,30 @@
-//wrong code!
-
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 using namespace std;
-class String
-{
-  private:
+
+class MyString {
+public:
     string str;
-    public: 
-    void accept()
-    {
-        cout<<"Enter a string: ";
-        getline(cin,str);
-    }
-    String(string s)
-    {
-        str=s;
-    }
-    string operator +(string s)
-    {
-        string result;
-        result=strconcat(str,s2.str);
-        return str+s;
+
+    // Overload + operator
+    MyString operator+(const MyString& other) const {
+        MyString temp;
+        temp.str = str + other.str;
+        return temp;
     }
 
+    void display() const {
+        cout << str << endl;
+    }
 };
-int main()
-{
-    String s1,s2("Manake"),s3;
-    s1.accept();
-    s3=s1+s3;
 
+int main() {
+    MyString s1, s2, s3;
+    s1.str = "xyz";
+    s2.str = "pqr";
+    s3 = s1 + s2;
+
+    cout << "Concatenated string: ";
+    s3.display();
     return 0;
 }
