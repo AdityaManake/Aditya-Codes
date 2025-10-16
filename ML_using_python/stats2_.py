@@ -18,7 +18,7 @@ def variance():
     squared_diff=[(x-mean)**2 for x in dataset]
     return sum(squared_diff)/n
 def std_deviation():
-    return np.sqrt(variance())
+    return variance()**0.5
 def mean_deviation():
     mean=sum(dataset)/len(dataset)
     abs_diff=[abs(x-mean) for x in dataset]

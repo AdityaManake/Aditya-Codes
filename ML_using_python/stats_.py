@@ -77,3 +77,4 @@ def find_percentile(p=75):
         return sorted_data[k - 1] + d * (sorted_data[k] - sorted_data[k - 1])  
 
 print("75th Percentile:", find_percentile(75))
+

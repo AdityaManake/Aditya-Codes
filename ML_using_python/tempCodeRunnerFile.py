@@ -1,0 +1,1 @@
+model.fit(x_train_scaled,y_train)
