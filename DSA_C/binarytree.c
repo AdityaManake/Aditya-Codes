@@ -51,7 +51,7 @@ struct node *insertLeft(struct node *root, int item)
 }
 struct node *insertRight(struct node *root, int item)
 {
-    struct node *newnode=createNode(item);
+   root->right = createNode(item);
     return root->right;
 }
 int main()
@@ -60,6 +60,8 @@ int main()
     insertLeft(root,2);
     insertRight(root,3);    
     insertLeft(root->left,4);
+    insertLeft(root->left->left,5);
+    insertRight(root->right,6);
     printf("Inorder traversal: ");
     inOrder(root);
     printf("\nPreorder traversal: ");
