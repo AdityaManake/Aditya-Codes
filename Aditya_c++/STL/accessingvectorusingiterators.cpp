@@ -2,22 +2,16 @@
 using namespace std;
 int main()
 {
-    vector<char>v(10);
-    vector<char>::iterator p;
-    int i;
-    p=v.begin();
-    i=0;
-    while(p!=v.end())
+    vector<char> v(10);
+    for(char i=0;i <v.size();i++)
     {
-        *p=i+'a';
-        p++;
-        i++;
+        v[i]='a'+i;
     }
-    p=v.begin();
-    while(p!=v.end())
+    vector<char>::iterator it;
+    for(it=v.begin();it!=v.end();it++)
     {
-        cout<<*p<<" ";
-        p++;
+        cout<<*it<<" ";
     }
+
     return 0;
 }
