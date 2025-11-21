@@ -1,11 +1,2 @@
-n=int(input("Enter the number:"))
-orignal=n
-reversed=0
-while n>0:
-    r=n%10
-    reversed=reversed*10+r
-    n=n//10
-if orignal==reversed:
-    print("The number is palindrome")
-else:
-    print("The number is not palindrome")
+n=input("Enter the number:")
+print("The number is a palindrome" if n==n[::-1] else "The number is not palindrome" )
