@@ -73,6 +73,7 @@ void create()
         printf("Enter data:");
         scanf("%d",&temp->info);
         temp->next=NULL;
+        ptr=start;
         if(start==NULL)
         {
             start = temp;
