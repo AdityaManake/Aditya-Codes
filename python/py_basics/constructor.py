@@ -1,11 +1,8 @@
-class character:
-    def __init__(self,name,attack,defence):  #constructor
+class Student:
+    def __init__(self,name,age):
         self.name=name
-        self.attack=attack
-        self.defence=defence
+        self.age=age
     def show(self):
-        print(f"{self.name} deals {self.attack} damage and has {self.defence} defence")
-worrior=character("Aditya",100,75)
-archer=character("Archer",80,50)
-worrior.show()
-archer.show()
+        print(self.name,self.age)
+s1=Student("Aditya",21)
+s1.show()
