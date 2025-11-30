@@ -1,30 +1,23 @@
-#include <iostream>
-#include <string>
+#include<bits/stdc++.h>
 using namespace std;
-
-class MyString {
-public:
-    string str;
-
-    // Overload + operator
-    MyString operator+(const MyString& other) const {
-        MyString temp;
-        temp.str = str + other.str;
-        return temp;
+class MyString
+{
+    private:
+    string s1,s2;
+    public:
+    MyString(string a, string b)
+    {
+        s1=a;
+        s2=b;
     }
-
-    void display() const {
-        cout << str << endl;
+    void operator+()
+    {
+        cout<<s1+s2;
     }
 };
-
-int main() {
-    MyString s1, s2, s3;
-    s1.str = "xyz";
-    s2.str = "pqr";
-    s3 = s1 + s2;
-
-    cout << "Concatenated string: ";
-    s3.display();
+int main()
+{
+    MyString m1("xyz","pqr");
+    +m1;
     return 0;
 }
