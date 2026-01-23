@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of a Senior Front-End Engineer specializing in modern, responsive web experiences.">
+    <title>Aditya Manake | Senior Front-End Engineer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">AM.</a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#projects" class="nav-link">Work</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="assets/images/hero.png" alt="Abstract Background" class="hero-bg-img">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container hero-content">
+            <span class="greeting fade-in-up">Hello, I'm Aditya</span>
+            <h1 class="fade-in-up delay-1">Building digital <br><span class="highlight">masterpieces.</span></h1>
+            <p class="fade-in-up delay-2">Senior Front-End Engineer focusing on exceptional user experiences and modern minimalistic design.</p>
+            <div class="hero-cta fade-in-up delay-3">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-outline">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Selected Work</h2>
+                <p class="section-subtitle">Showcasing creative solutions and technical prowess.</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card" data-tilt>
+                    <div class="project-image">
+                        <img src="assets/images/project1.png" alt="Finance Dashboard">
+                        <div class="project-overlay">
+                            <a href="#" class="btn-icon"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="btn-icon"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Finance Analytics Dashboard</h3>
+                        <p>A comprehensive real-time financial tracking dashboard with data visualization.</p>
+                        <div class="tags">
+                            <span>React</span>
+                            <span>D3.js</span>
+                            <span>Tailwind</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card" data-tilt>
+                    <div class="project-image">
+                        <img src="assets/images/project2.png" alt="E-commerce App">
+                        <div class="project-overlay">
+                            <a href="#" class="btn-icon"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="btn-icon"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Luxe Fashion Store</h3>
+                        <p>High-end fashion e-commerce platform with seamless payment integration.</p>
+                        <div class="tags">
+                            <span>Next.js</span>
+                            <span>Stripe</span>
+                            <span>Framer Motion</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 (Placeholder for layout balance) -->
+                <article class="project-card" data-tilt>
+                    <div class="project-image placeholder-image">
+                        <div class="placeholder-content">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="#" class="btn-icon"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="btn-icon"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>AI Task Manager</h3>
+                        <p>Smart productivity tool leveraging natural language processing.</p>
+                        <div class="tags">
+                            <span>TypeScript</span>
+                            <span>OpenAI API</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2 class="section-title">Let's Connect</h2>
+                    <p>I'm currently available for freelance work and full-time opportunities. If you have a project that needs some creative love, let's talk.</p>
+                    
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:hello@aditya.dev">hello@aditya.dev</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-linkedin"></i>
+                            <a href="#">linkedin.com/in/aditya</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-twitter"></i>
+                            <a href="#">@aditya_dev</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                        <span class="error-msg">Please enter your name</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        <span class="error-msg">Please enter a valid email</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+                        <span class="error-msg">Please enter a message</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Aditya Manake. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Vanilla Tilt for 3D hover effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
