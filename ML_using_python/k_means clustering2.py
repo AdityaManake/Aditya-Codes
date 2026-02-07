@@ -30,9 +30,7 @@ km=KMeans(n_clusters=3)
 y_predicted=km.fit_predict(df[['petal length (cm)','petal width (cm)']])
 df['cluster']=y_predicted
 print(df.head())
-df1=df[df.cluster==0]
-df2=df[df.cluster==1]
-df3=df[df.cluster==2]
+df1,df2,df3=df[df.cluster==0],df[df.cluster==1],df[df.cluster==2]
 plt.scatter(df1['petal length (cm)'],df1['petal width (cm)'],color='green')
 plt.scatter(df2['petal length (cm)'],df2['petal width (cm)'],color='blue')
 plt.scatter(df3['petal length (cm)'],df3['petal width (cm)'],color='red')
