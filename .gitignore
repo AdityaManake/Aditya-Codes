@@ -1,0 +1,5 @@
+*.exe
+github_push_commands.txt
+.vscode/
+.gitignore
+Sports Booking Automation/
