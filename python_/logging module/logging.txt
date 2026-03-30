@@ -1,0 +1,7 @@
+VALUE | LEVEL    | LOGGING FUNCTION    | DESCRIPTION
+------|----------|---------------------|--------------------------------------------------------
+10    | DEBUG    | logging.debug()     | Lowest level. Used to record simple details.
+20    | INFO     | logging.info()      | Record general information.
+30    | WARNING  | logging.warning()   | Potential issues which may not cause errors in the future.
+40    | ERROR    | logging.error()     | Record errors which causes a section of the code to fail.
+50    | CRITICAL | logging.critical()  | Highest level. Blockers which fails your whole program.
