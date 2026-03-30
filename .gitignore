@@ -3,3 +3,10 @@ github_push_commands.txt
 .vscode/
 .gitignore
 Sports Booking Automation/
+
+# Deep_Learning rules
+Deep_Learning/*
+!Deep_Learning/*/
+Deep_Learning/data/
+!Deep_Learning/**/*.py
+!Deep_Learning/*.py
