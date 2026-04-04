@@ -10,3 +10,7 @@ Deep_Learning/*
 Deep_Learning/data/
 !Deep_Learning/**/*.py
 !Deep_Learning/*.py
+
+# Ignore Real_estate_price_prediction as it has its own repo
+ML_using_python/Projects/Real_estate_price_prediction/
+
