@@ -19,3 +19,6 @@ ML_using_python/Projects/PersonaSpend/
 
 # Ignore automation_bot as it has its own repo
 python_/projects/automation_bot/
+
+# Ignore assignment as it has its own repo
+assignment/
