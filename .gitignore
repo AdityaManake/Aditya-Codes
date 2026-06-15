@@ -10,6 +10,8 @@ Deep_Learning/*
 Deep_Learning/data/
 !Deep_Learning/**/*.py
 !Deep_Learning/*.py
+!Deep_Learning/**/*.ipynb
+!Deep_Learning/*.ipynb
 
 # Ignore ML_using_python/Projects as projects have their own repos
 ML_using_python/Projects/
