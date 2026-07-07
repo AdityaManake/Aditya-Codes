@@ -4,7 +4,7 @@ def gradient_descent(x,y):
     m_curr=b_curr=0
     iterations=10000
     n=len(x)
-    learning_rate=0.000001
+    learning_rate=0.0001
     for i in range(iterations):
         y_pred=m_curr*x+b_curr
         cost=(1/n)*sum(val**2 for val in (y-y_pred))
