@@ -19,7 +19,18 @@ ML_using_python/Projects/
 # Ignore automation_bot as it has its own repo
 python_/projects/automation_bot/
 
-# Ignore assignment as it has its own repo
 assignment/
 
 /.vscode
+
+# Python Virtual Environments & Cache
+.venv
+.venv/
+venv
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+
